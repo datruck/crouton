@@ -16,7 +16,7 @@ if ! wget -O- --no-verbose --timeout=60 -t2 "$d"  \
     echo 'Download from Debian gitweb failed. Trying latest release...' 1>&2
     d='http://ftp.debian.org/debian/pool/main/d/debootstrap/'
     f="`wget -O- --no-verbose --timeout=60 -t2 "$d" \
-            | sed -ne 's ^.*\(debootstrap_[0-9.]*.tar.xz\).*$ \1 p' \
+            | sed -ne 's ^.*\(debootstrap_[0-9.]*.tar.gz\).*$ \1 p' \
             | tail -n 1`"
     if [ -z "$f" ]; then
         error 1 'Failed to download debootstrap.
